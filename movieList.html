@@ -11,7 +11,7 @@
         
       <select class="form-control" ng-model="ctrl.sort">
         <option value="Title">Title</option>
-        <option value="-imdbRating">IMDB Rating</option> <!-- use - infront of value to indicate reverse sort -->
+        <option value="-imdbRating">IMDB Rating</option> <!-- use "-" infront of value to indicate reverse sort -->
         <option value="-Metascore">Metascore</option>
         <option value="-Year">Year</option>
       </select>
@@ -42,21 +42,10 @@
   </div>
   
   <div>
-    <!--TODO #7: 
-      Go to the previous page of movies when this button is clicked. 
-      This button should be disabled when you are on the first page.
-    -->
     <button class="btn btn-default" ng-click="ctrl.curPage = ctrl.curPage - 1" ng-disabled="ctrl.curPage === 0">
       <i class="glyphicon glyphicon-chevron-left"></i>
     </button>
-    
-    <!--TODO #7: show the current page number and the total number of pages-->
     page {{ctrl.curPage + 1}} of {{ctrl.totalPages}}
-    
-    <!--TODO #7: 
-      Go to the next page of movies when this button is clicked. 
-      This button should be disabled when you are on the last page.
-    -->
     <button class="btn btn-default" ng-click="ctrl.curPage = ctrl.curPage + 1" ng-disabled="ctrl.curPage >= ctrl.totalPages - 1">
       <i class="glyphicon glyphicon-chevron-right"></i>
     </button>
